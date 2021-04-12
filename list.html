@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>International conference - Lung Cancer</title>
+</head>
+
+<body>
+  <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="icon-lock" viewBox="0 0 12 14">
+        <title>Icon Lock</title>
+        <rect x="3" y="1" width="6" height="5" rx="1" stroke="#5F5797" stroke-width="2" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M2 5C0.895431 5 0 5.89543 0 7V12C0 13.1046 0.895431 14 2 14H10C11.1046 14 12 13.1046 12 12V7C12 5.89543 11.1046 5 10 5H2ZM6 8C5.44772 8 5 8.44772 5 9V10C5 10.5523 5.44772 11 6 11C6.55228 11 7 10.5523 7 10V9C7 8.44772 6.55228 8 6 8Z"
+          fill="#5F5797" />
+      </symbol>
+      <symbol id="icon-email" viewBox="0 0 26 17">
+        <title>Icon email</title>
+        <rect x="1.75" y="1.125" width="22.3316" height="14.75" stroke="white" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M1.98419 1.53552L12.9158 9.64605L23.4947 1.53552" stroke="white" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M2.51318 15.6408L10.216 7.93805M24.0237 15.6408L15.9793 7.59644" stroke="white" stroke-width="2" />
+      </symbol>
+      <symbol id="arrow-right" viewBox="0 0 5 8">
+        <title>Arrow right</title>
+        <path
+          d="M1.49884 0.653752C1.20594 0.360859 0.731069 0.360859 0.438176 0.653752C0.145283 0.946645 0.145283 1.42152 0.438176 1.71441L1.49884 0.653752ZM3.78448 4.00005L4.31481 4.53038C4.6077 4.23749 4.6077 3.76262 4.31481 3.46972L3.78448 4.00005ZM0.438176 6.28569C0.145283 6.57859 0.145283 7.05346 0.438176 7.34635C0.731069 7.63925 1.20594 7.63925 1.49884 7.34635L0.438176 6.28569ZM0.438176 1.71441L3.25415 4.53038L4.31481 3.46972L1.49884 0.653752L0.438176 1.71441ZM3.25415 3.46972L0.438176 6.28569L1.49884 7.34635L4.31481 4.53038L3.25415 3.46972Z" />
+      </symbol>
+      <symbol id="icon-share" viewBox="0 0 19 26">
+        <circle cx="16" cy="3.65869" r="3" fill="black" />
+        <circle cx="16" cy="22.6587" r="3" fill="black" />
+        <circle cx="3" cy="13.6587" r="3" fill="black" />
+        <line x1="4.38656" y1="12.8689" x2="15.3865" y2="4.32466" stroke="black" stroke-width="2" />
+        <line x1="3.56921" y1="13.8365" x2="16.5692" y2="22.8365" stroke="black" stroke-width="2" />
+      </symbol>
+    </defs>
+  </svg>
+  <header class="header">
+    <div class="header-left">
+      <button class="burger">
+        <span></span>
+      </button>
+      <div class="logo-companies">
+        <a href="#" target="_blank">
+          <img src="./images/logo-minzdrav.svg" alt="">
+        </a>
+        <a href="#" target="_blank">
+          <img src="./images/logo-kazior.svg" alt="">
+        </a>
+        <a href="#" target="_blank">
+          <img src="./images/logo-tac.svg" alt="">
+        </a>
+        <a href="#" target="_blank">
+          <img src="./images/logo-kcs.svg" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="header-right">
+      <button type="button" class="btn btn-white">
+        <svg width="12" height="14" fill="none">
+          <use xlink:href="#icon-lock"></use>
+        </svg>
+        Вход
+      </button>
+      <div class="lang-block">
+        <div class="lang">
+          <button class="lang-btn">Ру</button>
+          <ul class="lang-dropdown">
+            <li><a href="#">En</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="page">
+    <div class="sidebar">
+      <div class="sidebar-menu-wrapper-outer">
+        <div class="sidebar-menu-wrapper-inner">
+          <ul class="sidebar-menu">
+            <li>
+              <a href="./index.html">Главная</a>
+            </li>
+            <li>
+              <i></i>
+            </li>
+            <li>
+              <a href="#">Все конференции</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar-menu-wrapper-outer">
+        <div class="sidebar-menu-wrapper-inner">
+          <div class="typograph">
+            <p>© 2021, Kazior</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="main">
+      <div class="promo-block">
+        <div class="email-btn">
+          <svg width="26" height="17" fill="none">
+            <use xlink:href="#icon-email"></use>
+          </svg>
+        </div>
+        <div class="promo">
+          <div class="timer">
+            <p class="timer-title">До начала конференции осталось:</p>
+            <div class="timer-row">
+              <div class="timer-item">
+                <span id="days">25</span>
+                <p>Дней</p>
+              </div>
+              <div class="timer-colon">:</div>
+              <div class="timer-item">
+                <span id="hours">18</span>
+                <p>Часов</p>
+              </div>
+              <div class="timer-colon">:</div>
+              <div class="timer-item">
+                <span id="minutes">32</span>
+                <p>Минут</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        
+      </div>
+      <div class="share">
+        <button class="share-btn">
+          <svg width="19" height="26">
+            <use xlink:href="#icon-share"></use>
+          </svg>
+        </button>
+      </div>
+    </main>
+    <div class="page-right"></div>
+  </div>
+
+  <script src="./libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+  <script src="./libs/slick-1.8.1/slick.min.js"></script>
+  <script src="./libs/matchHeight.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

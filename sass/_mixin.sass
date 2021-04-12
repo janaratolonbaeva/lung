@@ -1,0 +1,63 @@
+$roboto: 'Roboto', Arial, "Helvetica Neue", Helvetica, sans-serif
+$base: #433A80
+$primary: #5F5797
+$baseFontColor: #000
+$transition35s: all 0.35s
+
+
+=minWidth400
+  @media screen and (min-width: 400px)
+    @content
+=mini
+  @media screen and (min-width: 450px)
+    @content
+=xs
+  @media screen and (min-width: 500px)
+    @content
+=minWidth550
+  @media screen and (min-width: 550px)
+    @content
+=mobile
+  @media screen and (min-width: 650px)
+    @content
+=tablet
+  @media screen and (min-width: 769px)
+    @content
+=minWidth850
+  @media screen and (min-width: 850px)
+    @content
+=desktop
+  @media screen and (min-width: 992px)
+    @content
+=minWidth1100
+  @media screen and (min-width: 1100px)
+    @content
+=minWidth1250
+  @media screen and (min-width: 1250px)
+    @content
+=container
+  @media screen and (min-width: 1000px)
+    @content
+=minWidth1550
+  @media screen and (min-width: 1550px)
+    @content
+=minWidth1700
+  @media screen and (min-width: 1700px)
+    @content
+
+=placeholder
+  &::-webkit-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+
+=circle($color, $width, $height)
+  border-radius: 50%
+  background: $color
+  width: $width
+  height: $height
+  display: block
