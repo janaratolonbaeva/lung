@@ -19,18 +19,28 @@ body
 
 .page
   position: relative
-  &-content 
-    max-width: 1440px
-    width: 100%
-    margin: 0 auto
-    display: flex
-    &-right 
-      width: 102px
-
-.container 
-  max-width: 950px
+  max-width: 1440px
+  min-width: 430px
   width: 100%
   margin: 0 auto
+  overflow: hidden
+  &-content
+    +mobile 
+      display: flex
+    &-right
+      width: 0
+      +minWidth1250 
+        width: 102px
+
+.container 
+  width: 100%
+  +mobile
+    padding-right: 75px
+  +tablet
+    padding-right: 105px
+  +minWidth1250
+    max-width: 950px
+    margin: 0 auto
 
 .hidden
   position: absolute
@@ -45,7 +55,9 @@ body
   text-align: center
   padding: 14px 25px
   border-radius: 50px
-  min-width: 120px
+  position: relative
+  +xs 
+    min-width: 120px
   &-white 
     border: 1px solid $primary
     color: $primary
@@ -77,7 +89,6 @@ body
       margin-left: 8px
       vertical-align: middle
 
-
 /*** Header ***/     
 .header
   display: flex
@@ -85,21 +96,29 @@ body
   align-items: center
   max-width: 1440px
   width: 100%
-  margin: 0 auto 
+  margin: 0 auto 20px
+  +mobile 
+    margin: 0 auto
   &-left,
   &-right
     display: flex
     align-items: center
     .btn 
-      margin-right: 36px
+      +mobile
+        margin-right: 36px
 
 .burger 
-  width: 102px
-  height: 104px
+  width: 75px
+  height: 75px
   background: $base
   display: flex
   justify-content: center
   align-items: center
+  position: relative
+  z-index: 205
+  +tablet
+    width: 102px
+    height: 104px
   &.active
     span 
       background: transparent
@@ -131,8 +150,21 @@ body
 .logo-companies 
   a 
     display: inline-block
-    margin-left: 35px
+    margin-left: 10px
     vertical-align: middle
+    width: 30px
+    +xs 
+      width: 40px
+    +mobile
+      width: 50px
+      margin-left: 20px
+    +tablet
+      width: auto
+    +desktop 
+      margin-left: 35px
+    img 
+      max-width: 100%
+      height: auto
 
 .lang
   position: relative
@@ -142,11 +174,14 @@ body
     .lang-dropdown 
       display: block
   &-block 
-    width: 102px
-    height: 104px
+    width: 75px
+    height: 75px
     display: flex
     justify-content: center
     align-items: center
+    +tablet
+      width: 102px
+      height: 104px
   &-btn 
     position: relative
     padding: 5px 10px
@@ -176,7 +211,7 @@ body
   color: #fff
   position: absolute
   top: 0
-  left: 102px
+  left: 0
   background: $base 
   height: 100%
   z-index: 100
@@ -184,6 +219,10 @@ body
   transform: translateX(-100vh)
   opacity: 0
   transition: all 1s ease
+  width: 100%
+  +mobile 
+    width: auto
+    left: 102px
   &.active 
     transform: translateX(0)
     opacity: 1
@@ -206,11 +245,14 @@ body
 
 /*** Sidebar ***/    
 .sidebar 
-  width: 102px
-  background: $primary
-  color: #fff
-  position: relative
-  z-index: 102
+  display: none
+  +mobile 
+    width: 102px
+    background: $primary
+    color: #fff
+    position: relative
+    z-index: 102
+    display: block
   &-menu 
     transform-origin: top left
     transform: rotate(-90deg) translate(-100%)
@@ -246,28 +288,48 @@ body
 
 /*** Main ***/    
 .main 
-  flex-grow: 1
+  padding: 0 20px
+  +mobile
+    width: calc(100% - 75px)
+    padding: 0
+    padding-left: 20px
+  +tablet 
+    width: calc(100% - 102px)
+  +minWidth1250
+    width: calc(100% - 204px)
+    padding-left: 0
   &-content
     position: relative
-    border-bottom: 1px solid #B2B2B2
     margin-bottom: 25px
-    &::after
-      content: ''
-      position: absolute
-      width: 1px
-      background: #B2B2B2
-      height: calc(100% + 104px)
-      right: 0
-      top: -104px
+    +mobile
+      &::after
+        content: ''
+        position: absolute
+        width: 1px
+        background: #B2B2B2
+        height: 100%
+        right: 75px
+        top: 0
+        +tablet 
+          right: 104px
+        +minWidth1250 
+          right: 0
 
 .social
   position: absolute
-  bottom: 0
+  bottom: 1px
   right: 0
   width: 65px
+  +mobile 
+    right: 76px
+  +tablet 
+    right: 105px
+  +minWidth1250
+    right: 0
   &-btn 
     border-top: 1px solid #B2B2B2
     border-left: 1px solid #B2B2B2
+    border-right: 1px solid #B2B2B2
     width: 65px
     height: 65px
     display: flex
@@ -275,6 +337,9 @@ body
     align-items: center
     position: absolute
     left: 0
+    background: #fff
+    +mobile 
+      border-right: none
     &:hover 
       background: rgba($primary, 0.4)
   .share-btn
@@ -296,17 +361,54 @@ body
 
 /*** Promo ***/    
 .promo
-  max-width: 950px
   width: 100%
   margin: 0 auto
-  background: url('../images/promo.jpg') no-repeat
-  background-size: cover
-  height: 573px
-  border-radius: 10px
   position: relative
+  border-radius: 10px
+  +mobile 
+    height: 400px
+    background: url(../images/promo.jpg) no-repeat
+    background-size: cover
+    background-position: 0 bottom
+  +tablet 
+    background-position: center bottom
+  +desktop
+    height: 573px
+  +minWidth1250
+    max-width: 950px
+  img 
+    width: 100%
+    border-radius: 10px
+    +mobile 
+      display: none
   &-block 
     position: relative
     margin-bottom: 15px
+    +mobile
+      &::after,
+      &::before
+        content: ''
+        position: absolute
+        width: 1px
+        background: #B2B2B2
+        right: 75px
+        z-index: 10
+        +tablet
+          right: 104px
+        +minWidth1250 
+          right: 0
+      &::before 
+        top: -104px
+        height: 240px
+        +desktop
+          top: -104px
+          height: 415px
+    &::after
+      height: 150px
+      bottom: -20px
+      +desktop
+        height: 150px
+        bottom: -20px
 
 .timer 
   background: $base
@@ -315,8 +417,13 @@ body
   display: inline-block
   border-radius: 5px
   position: absolute
-  left: 20px
-  bottom: 30%
+  left: 10px
+  bottom: 50px
+  +mobile 
+    left: 20px
+    bottom: 100px
+  +desktop
+    bottom: 30%
   &-title 
     margin-bottom: 10px
     line-height: 16px
@@ -347,32 +454,43 @@ body
     font-weight: 700
 
 .email-btn 
-  background: $base
-  width: 95px
-  height: 95px
-  display: flex
-  justify-content: center
-  align-items: center
-  position: absolute
-  border: 12px solid #fff
-  border-radius: 50%
-  bottom: 150px
-  right: -47.5px 
-  z-index: 10
-  cursor: pointer
+  display: none
+  +mobile
+    background: $base
+    width: 95px
+    height: 95px
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    border-radius: 50%
+    bottom: 150px
+    z-index: 10
+    cursor: pointer
+    right: 28.5px
+  +tablet 
+    right: 57.5px
+  +minWidth1250
+    right: -47.5px 
 
 /*** Webinars ***/    
 .webinar
-  padding-bottom: 35px
+  padding: 0 15px 35px 0
+  border-bottom: 1px solid #B2B2B2
   &-top 
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     align-items: center
     margin-bottom: 30px
     &-left 
       h4 
         font-size: 24px
         line-height: 28px
+    &-right 
+      display: none
+      minWidth850
+        display: block
   &-row 
     display: flex
     justify-content: space-between
@@ -410,7 +528,8 @@ body
       img 
         border-radius: 10px 
         display: block
-        max-width: 100%
+        width: 100%
+        height: auto
     &-info 
       width: 123px
       padding: 10px 10px 13px 
@@ -438,7 +557,8 @@ body
         color: $base
         margin-bottom: 20px
   &-slide 
-    margin: 10px
+    +minWidth850
+      margin: 10px
     .webinar-item 
       width: 100%
   &-bottom 
@@ -447,6 +567,7 @@ body
 .title 
   font-size: 32px
   line-height: 37px
+  margin: 0 30px 25px 0
   p 
     font-size: 28px
     line-height: 33px
@@ -455,7 +576,8 @@ body
     display: flex
     justify-content: space-between
     align-items: center
-    margin-bottom: 60px
+    flex-wrap: wrap
+    margin-bottom: 35px
 
 .icon
   &-lists 
@@ -484,6 +606,7 @@ body
 .footer 
   display: flex
   line-height: 16px
+  padding-bottom: 30px
   &-col 
     margin-right: 65px
     h5 

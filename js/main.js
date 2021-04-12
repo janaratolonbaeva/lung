@@ -1,28 +1,44 @@
 (function ($) {
-  $('.burger').on('click', function () {
-    if (!$('.nav').hasClass('active')) {
-      $(this).addClass('active');
-      $('.nav').addClass('active');
-    } else {
-      $(this).removeClass('active');
-      $('.nav').removeClass('active');
-    }
-  });
+  const responsiveWindow = () => {
+    if (window.matchMedia('(min-width: 650px)').matches) {
+      $('.burger').on('click', function () {
+        if (!$('.nav').hasClass('active')) {
+          $(this).addClass('active');
+          $('.nav').addClass('active');
+        } else {
+          $(this).removeClass('active');
+          $('.nav').removeClass('active');
+        }
+      });
 
-  $(document).mouseup(function (event) {
-    if ($('.nav').has(event.target).length === 0) {
-      $('.nav').removeClass('active');
-      $('.burger').removeClass('active');
+      $(document).mouseup(function (event) {
+        if ($('.nav').has(event.target).length === 0) {
+          $('.nav').removeClass('active');
+          $('.burger').removeClass('active');
+        }
+      });
+
+      $('.email-btn').on('click', function () {
+        $('.popup').addClass('open');
+        $('.popup-wrapper').addClass('open');
+      });
+    } else {
+      $('.burger').on('click', function () {
+        if (!$('.nav').hasClass('active')) {
+          $(this).addClass('active');
+          $('.nav').addClass('active');
+        } else {
+          $(this).removeClass('active');
+          $('.nav').removeClass('active');
+        }
+      });
     }
-  });
+  };
+
+  responsiveWindow();
 
   $('.share-btn').on('click', function () {
     $('.js-btn').toggleClass('active');
-  });
-
-  $('.email-btn').on('click', function () {
-    $('.popup').addClass('open');
-    $('.popup-wrapper').addClass('open');
   });
 
   $('.close-btn').on('click', function () {
@@ -89,7 +105,11 @@
     infinite: true,
     responsive: [
       {
-        breakpoint: '768',
+        breakpoint: '850',
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
       },
     ],
   });
