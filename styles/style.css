@@ -66,6 +66,7 @@ body {
 
 @media screen and (min-width: 1250px) {
   .container {
+    padding-right: 0;
     max-width: 950px;
     margin: 0 auto;
   }
@@ -518,6 +519,24 @@ body {
 }
 
 @media screen and (min-width: 650px) {
+  .main-content::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: #B2B2B2;
+    width: 300px;
+    right: 104px;
+    bottom: 0;
+  }
+}
+
+@media screen and (min-width: 650px) and (min-width: 1250px) {
+  .main-content::before {
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 650px) {
   .main-content::after {
     content: '';
     position: absolute;
@@ -562,7 +581,7 @@ body {
 
 @media screen and (min-width: 1250px) {
   .social {
-    right: 0;
+    right: 1px;
   }
 }
 
@@ -1038,7 +1057,7 @@ body {
 }
 
 /*** Footer ***/
-.footer {
+.footer-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -39,6 +39,7 @@ body
   +tablet
     padding-right: 105px
   +minWidth1250
+    padding-right: 0
     max-width: 950px
     margin: 0 auto
 
@@ -302,6 +303,16 @@ body
     position: relative
     margin-bottom: 25px
     +mobile
+      &::before 
+        content: ''
+        position: absolute
+        height: 1px
+        background: #B2B2B2
+        width: 300px
+        right: 104px
+        bottom: 0
+        +minWidth1250 
+          right: 0
       &::after
         content: ''
         position: absolute
@@ -325,7 +336,7 @@ body
   +tablet 
     right: 105px
   +minWidth1250
-    right: 0
+    right: 1px
   &-btn 
     border-top: 1px solid #B2B2B2
     border-left: 1px solid #B2B2B2
@@ -604,9 +615,10 @@ body
     
 /*** Footer ***/     
 .footer 
-  display: flex
-  line-height: 16px
-  padding-bottom: 30px
+  &-row
+    display: flex
+    line-height: 16px
+    padding-bottom: 30px
   &-col 
     margin-right: 65px
     h5 
