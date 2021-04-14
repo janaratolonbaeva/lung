@@ -534,10 +534,11 @@ body
             &::before 
               opacity: 1
               background: $base
-  &-col 
-    width: 48%
   &-item
     margin-bottom: 40px
+    width: 100%
+    +tablet 
+      width: 48%
     &-img 
       position: relative
       margin-bottom: 25px
@@ -575,6 +576,8 @@ body
   &-slide 
     +minWidth850
       margin: 10px
+    .webinar-item 
+      width: 100%
   &-bottom 
     text-align: center     
 
@@ -648,7 +651,6 @@ body
   position: absolute
   top: 15%
   background: #fff
-  padding: 35px 85px
   border-radius: 10px
   text-align: center
   transform: translateY(-100vh)
@@ -657,6 +659,8 @@ body
   &.open 
     transform: translateY(0)
     opacity: 1
+  &-content 
+    padding: 35px 85px
   &-wrapper 
     position: absolute
     top: 0
@@ -695,7 +699,9 @@ body
       border: 1px solid #E0E0E0
       background: transparent
       text-align: center
-      width: 360px
+      width: 100%
+      +mobile
+        width: 360px
       +placeholder 
         font-family: $roboto 
         font-weight: 400
