@@ -19,8 +19,7 @@ body
 
 .page
   position: relative
-  max-width: 1440px
-  min-width: 430px
+  max-width: 1980px
   width: 100%
   margin: 0 auto
   overflow: hidden
@@ -39,9 +38,11 @@ body
   +tablet
     padding-right: 105px
   +minWidth1250
-    padding-right: 0
     max-width: 950px
     margin: 0 auto
+  +container 
+    padding: 0 142px
+    max-width: 100%
 
 .hidden
   position: absolute
@@ -95,7 +96,7 @@ body
   display: flex
   justify-content: space-between
   align-items: center
-  max-width: 1440px
+  max-width: 1980px
   width: 100%
   margin: 0 auto 20px
   +mobile 
@@ -385,8 +386,9 @@ body
     background-position: center bottom
   +desktop
     height: 573px
-  +minWidth1250
     max-width: 950px
+  +container 
+    max-width: 100%
   img 
     width: 100%
     border-radius: 10px
@@ -395,6 +397,8 @@ body
   &-block 
     position: relative
     margin-bottom: 15px
+    +container
+      padding: 0 142px
     +mobile
       &::after,
       &::before
@@ -500,7 +504,7 @@ body
         line-height: 28px
     &-right 
       display: none
-      minWidth850
+      +minWidth850
         display: block
   &-row 
     display: flex
@@ -530,8 +534,9 @@ body
             &::before 
               opacity: 1
               background: $base
-  &-item
+  &-col 
     width: 48%
+  &-item
     margin-bottom: 40px
     &-img 
       position: relative
@@ -570,8 +575,6 @@ body
   &-slide 
     +minWidth850
       margin: 10px
-    .webinar-item 
-      width: 100%
   &-bottom 
     text-align: center     
 
@@ -601,6 +604,7 @@ body
       width: 18px
     &-2 
       width: 28px
+      display: none
     i 
       display: block
       width: 8px

@@ -18,7 +18,7 @@
         }
       });
 
-      $('.email-btn').on('click', function () {
+      $('#signin').on('click', function () {
         $('.popup').addClass('open');
         $('.popup-wrapper').addClass('open');
       });
@@ -44,6 +44,39 @@
   $('.close-btn').on('click', function () {
     $('.popup').removeClass('open');
     $('.popup-wrapper').removeClass('open');
+  });
+
+  //Slider
+  $('.webinar-slider').slick({
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    dots: true,
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: '850',
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+
+  $('.lists-btn').on('click', function () {
+    if ($('.icon-lists-1')) {
+      $('.icon-lists-1').css('display', 'none');
+      $('.icon-lists-2').css('display', 'flex');
+      $('.webinar-slider')
+        .addClass('webinar-row')
+        .removeClass('webinar-slider');
+      $('.webinar-slide').addClass('webinar-col').removeClass('webinar-slide');
+    } else {
+      $('.icon-lists-1').css('display', 'flex');
+      $('.icon-lists-2').css('display', 'none');
+      $('.webinar-row').addClass('webinar-slider').removeClass('webinar-row');
+      $('.webinar-col').addClass('webinar-slide').removeClass('webinar-col');
+    }
   });
 
   // Timer
@@ -96,196 +129,4 @@
   };
 
   setClock(deadline);
-
-  //Slider
-  $('#webinar-slider').slick({
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    dots: true,
-    infinite: true,
-    responsive: [
-      {
-        breakpoint: '850',
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  });
 })(jQuery);
-
-/*
-<section class="webinar">
-          <div class="title-block">
-            <h2 class="title">
-              <p>Centeast webinar series:</p>
-              Hard talk on serous ovarian cancer
-            </h2>
-            <div class="title-btn">
-              <a href="#" class="btn btn-primary">
-                Узнать больше
-                <svg width="5" height="8" fill="none">
-                  <use xlink:href="#arrow-right"></use>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="webinar-top">
-            <div class="webinar-top-left">
-              <h4>Прошедшие конференции</h4>
-            </div>
-            <div class="webinar-top-right">
-              <a href="./index.html" class="lists-btn">
-                <p>Список всех конференций</p>
-                <div class="icon-lists icon-lists-2">
-                  <i></i><i></i><i></i>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="webinar-row">
-            <div class="webinar-item">
-              <div class="webinar-item-img">
-                <img src="./images/webinars-img.jpeg" width="466" height="316" alt="Webinar">
-                <div class="webinar-item-info">
-                  <p class="timer-title">Конференция
-                    закончилась</p>
-                  <div class="timer-item">
-                    <span>25</span>
-                    <p>Дней назад</p>
-                  </div>
-                </div>
-              </div>
-              <div class="webinar-item-content">
-                <h5>Международная научно-практическая конференция</h5>
-                <h3>ОНКОЛОГИЯ КАЗАХСТАНА ВЧЕРА, СЕГОДНЯ, ЗАВТРА</h3>
-                <a href="#" class="btn btn-default">
-                  Узнать больше
-                  <svg width="5" height="8" fill="none">
-                    <use xlink:href="#arrow-right"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="webinar-item">
-              <div class="webinar-item-img">
-                <img src="./images/webinars-img.jpeg" width="466" height="316" alt="Webinar">
-                <div class="webinar-item-info">
-                  <p class="timer-title">Конференция
-                    закончилась</p>
-                  <div class="timer-item">
-                    <span>148</span>
-                    <p>Дней назад</p>
-                  </div>
-                </div>
-              </div>
-              <div class="webinar-item-content">
-                <h5>Международная научно-практическая конференция</h5>
-                <h3>ОНКОЛОГИЯ КАЗАХСТАНА ВЧЕРА, СЕГОДНЯ, ЗАВТРА</h3>
-                <a href="#" class="btn btn-default">
-                  Узнать больше
-                  <svg width="5" height="8" fill="none">
-                    <use xlink:href="#arrow-right"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="webinar-item">
-              <div class="webinar-item-img">
-                <img src="./images/webinars-img.jpeg" width="466" height="316" alt="Webinar">
-                <div class="webinar-item-info">
-                  <p class="timer-title">Конференция
-                    закончилась</p>
-                  <div class="timer-item">
-                    <span>25</span>
-                    <p>Дней назад</p>
-                  </div>
-                </div>
-              </div>
-              <div class="webinar-item-content">
-                <h5>Международная научно-практическая конференция</h5>
-                <h3>ОНКОЛОГИЯ КАЗАХСТАНА ВЧЕРА, СЕГОДНЯ, ЗАВТРА</h3>
-                <a href="#" class="btn btn-default">
-                  Узнать больше
-                  <svg width="5" height="8" fill="none">
-                    <use xlink:href="#arrow-right"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="webinar-item">
-              <div class="webinar-item-img">
-                <img src="./images/webinars-img.jpeg" width="466" height="316" alt="Webinar">
-                <div class="webinar-item-info">
-                  <p class="timer-title">Конференция
-                    закончилась</p>
-                  <div class="timer-item">
-                    <span>148</span>
-                    <p>Дней назад</p>
-                  </div>
-                </div>
-              </div>
-              <div class="webinar-item-content">
-                <h5>Международная научно-практическая конференция</h5>
-                <h3>ОНКОЛОГИЯ КАЗАХСТАНА ВЧЕРА, СЕГОДНЯ, ЗАВТРА</h3>
-                <a href="#" class="btn btn-default">
-                  Узнать больше
-                  <svg width="5" height="8" fill="none">
-                    <use xlink:href="#arrow-right"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="webinar-item">
-              <div class="webinar-item-img">
-                <img src="./images/webinars-img.jpeg" width="466" height="316" alt="Webinar">
-                <div class="webinar-item-info">
-                  <p class="timer-title">Конференция
-                    закончилась</p>
-                  <div class="timer-item">
-                    <span>25</span>
-                    <p>Дней назад</p>
-                  </div>
-                </div>
-              </div>
-              <div class="webinar-item-content">
-                <h5>Международная научно-практическая конференция</h5>
-                <h3>ОНКОЛОГИЯ КАЗАХСТАНА ВЧЕРА, СЕГОДНЯ, ЗАВТРА</h3>
-                <a href="#" class="btn btn-default">
-                  Узнать больше
-                  <svg width="5" height="8" fill="none">
-                    <use xlink:href="#arrow-right"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="webinar-item">
-              <div class="webinar-item-img">
-                <img src="./images/webinars-img.jpeg" width="466" height="316" alt="Webinar">
-                <div class="webinar-item-info">
-                  <p class="timer-title">Конференция
-                    закончилась</p>
-                  <div class="timer-item">
-                    <span>148</span>
-                    <p>Дней назад</p>
-                  </div>
-                </div>
-              </div>
-              <div class="webinar-item-content">
-                <h5>Международная научно-практическая конференция</h5>
-                <h3>ОНКОЛОГИЯ КАЗАХСТАНА ВЧЕРА, СЕГОДНЯ, ЗАВТРА</h3>
-                <a href="#" class="btn btn-default">
-                  Узнать больше
-                  <svg width="5" height="8" fill="none">
-                    <use xlink:href="#arrow-right"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="webinar-bottom">
-            <a href="#" class="btn btn-white">Показать еще</a>
-          </div>
-        </section>
-        */
