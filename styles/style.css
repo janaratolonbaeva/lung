@@ -1120,7 +1120,7 @@ body {
 /*** Popup ***/
 .popup {
   position: absolute;
-  top: 15%;
+  top: 5%;
   background: #fff;
   border-radius: 10px;
   text-align: center;
@@ -1133,6 +1133,12 @@ body {
   transition: all 0.75s ease;
 }
 
+@media screen and (min-width: 769px) {
+  .popup {
+    top: 15%;
+  }
+}
+
 .popup.open {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
@@ -1141,7 +1147,19 @@ body {
 }
 
 .popup-content {
-  padding: 35px 85px;
+  padding: 25px 15px;
+}
+
+@media screen and (min-width: 650px) {
+  .popup-content {
+    padding: 25px 30px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .popup-content {
+    padding: 35px 85px;
+  }
 }
 
 .popup-wrapper {

@@ -649,18 +649,24 @@ body
 /*** Popup ***/    
 .popup
   position: absolute
-  top: 15%
+  top: 5%
   background: #fff
   border-radius: 10px
   text-align: center
   transform: translateY(-100vh)
   opacity: 0
   transition: all 0.75s ease
+  +tablet 
+    top: 15%
   &.open 
     transform: translateY(0)
     opacity: 1
   &-content 
-    padding: 35px 85px
+    padding: 25px 15px
+    +mobile
+      padding: 25px 30px
+    +tablet 
+      padding: 35px 85px
   &-wrapper 
     position: absolute
     top: 0
