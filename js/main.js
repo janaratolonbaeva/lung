@@ -2,7 +2,10 @@
   $(document).on('mouseup', function (e) {
     const target = $(e.target);
 
-    if (!$('.nav').is(target) && $('.nav').has(target).length === 0) {
+    if (
+      (!$('.nav').is(target) && $('.nav').has(target).length === 0) ||
+      !$('.burger').is(target)
+    ) {
       $('.nav').removeClass('active');
       $('.burger').removeClass('active');
     }
@@ -141,5 +144,8 @@
         console.log(error);
       },
     });
+
+    $('.popup').removeClass('open');
+    $('.popup-wrapper').removeClass('open');
   });
 })(jQuery);

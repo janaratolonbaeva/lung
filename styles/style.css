@@ -49,6 +49,8 @@ body {
 
 .container {
   width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 650px) {
@@ -57,15 +59,9 @@ body {
   }
 }
 
-@media screen and (min-width: 769px) {
-  .container {
-    padding-right: 105px;
-  }
-}
-
 @media screen and (min-width: 1250px) {
   .container {
-    max-width: 950px;
+    padding-right: 0;
     margin: 0 auto;
   }
 }
@@ -92,12 +88,7 @@ body {
   padding: 14px 25px;
   border-radius: 50px;
   position: relative;
-}
-
-@media screen and (min-width: 500px) {
-  .btn {
-    min-width: 120px;
-  }
+  min-width: 120px;
 }
 
 .btn-white {
@@ -446,7 +437,13 @@ body {
   white-space: nowrap;
   position: absolute;
   top: 160px;
-  left: 40px;
+  left: 25px;
+}
+
+@media screen and (min-width: 769px) {
+  .sidebar-menu {
+    left: 40px;
+  }
 }
 
 .sidebar-menu li {
@@ -523,48 +520,6 @@ body {
   margin-bottom: 25px;
 }
 
-@media screen and (min-width: 650px) {
-  .main-content::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    background: #B2B2B2;
-    width: 300px;
-    right: 104px;
-    bottom: 0;
-  }
-}
-
-@media screen and (min-width: 650px) and (min-width: 1250px) {
-  .main-content::before {
-    right: 0;
-  }
-}
-
-@media screen and (min-width: 650px) {
-  .main-content::after {
-    content: '';
-    position: absolute;
-    width: 1px;
-    background: #B2B2B2;
-    height: 100%;
-    right: 75px;
-    top: 0;
-  }
-}
-
-@media screen and (min-width: 650px) and (min-width: 769px) {
-  .main-content::after {
-    right: 104px;
-  }
-}
-
-@media screen and (min-width: 650px) and (min-width: 1250px) {
-  .main-content::after {
-    right: 0;
-  }
-}
-
 .social {
   position: absolute;
   bottom: 1px;
@@ -574,13 +529,7 @@ body {
 
 @media screen and (min-width: 650px) {
   .social {
-    right: 76px;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .social {
-    right: 105px;
+    right: 56px;
   }
 }
 
@@ -652,15 +601,9 @@ body {
   margin: 0 auto;
   position: relative;
   border-radius: 10px;
-}
-
-@media screen and (min-width: 650px) {
-  .promo {
-    height: 400px;
-    background: url(../images/promo.jpg) no-repeat;
-    background-size: cover;
-    background-position: 0 bottom;
-  }
+  background: url(../images/promo.jpg) no-repeat;
+  background-size: cover;
+  background-position: right bottom;
 }
 
 @media screen and (min-width: 769px) {
@@ -671,7 +614,6 @@ body {
 
 @media screen and (min-width: 992px) {
   .promo {
-    height: 573px;
     max-width: 950px;
   }
 }
@@ -679,17 +621,6 @@ body {
 @media screen and (min-width: 1440px) {
   .promo {
     max-width: 100%;
-  }
-}
-
-.promo img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-@media screen and (min-width: 650px) {
-  .promo img {
-    display: none;
   }
 }
 
@@ -710,14 +641,8 @@ body {
     position: absolute;
     width: 1px;
     background: #B2B2B2;
-    right: 75px;
+    right: 55px;
     z-index: 10;
-  }
-}
-
-@media screen and (min-width: 650px) and (min-width: 769px) {
-  .promo-block::after, .promo-block::before {
-    right: 104px;
   }
 }
 
@@ -730,14 +655,14 @@ body {
 @media screen and (min-width: 650px) {
   .promo-block::before {
     top: -104px;
-    height: 240px;
+    height: 285px;
   }
 }
 
 @media screen and (min-width: 650px) and (min-width: 992px) {
   .promo-block::before {
     top: -104px;
-    height: 415px;
+    height: 395px;
   }
 }
 
@@ -753,28 +678,38 @@ body {
   }
 }
 
+.promo-content {
+  padding: 70px 20px;
+}
+
+@media screen and (min-width: 769px) {
+  .promo-content {
+    padding: 120px 20px 100px;
+  }
+}
+
+.promo-content h1,
+.promo-content h2 {
+  color: #433A80;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 769px) {
+  .promo-content h1,
+  .promo-content h2 {
+    font-size: 32px;
+  }
+}
+
 .timer {
   background: #433A80;
   color: #fff;
   padding: 10px 35px;
   display: inline-block;
   border-radius: 5px;
-  position: absolute;
-  left: 10px;
-  bottom: 50px;
-}
-
-@media screen and (min-width: 650px) {
-  .timer {
-    left: 20px;
-    bottom: 100px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .timer {
-    bottom: 30%;
-  }
 }
 
 .timer-title {
@@ -788,6 +723,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 20px;
 }
 
 .timer-item {
@@ -819,6 +755,10 @@ body {
   font-weight: 700;
 }
 
+.timer-btn-wrapper {
+  text-align: center;
+}
+
 .email-btn {
   display: none;
 }
@@ -842,26 +782,98 @@ body {
     bottom: 150px;
     z-index: 10;
     cursor: pointer;
-    right: 28.5px;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .email-btn {
-    right: 57.5px;
+    right: 8.5px;
   }
 }
 
 @media screen and (min-width: 1250px) {
   .email-btn {
-    right: -47.5px;
+    right: -46.5px;
+  }
+}
+
+/*** Logo-block ***/
+.logo {
+  display: block;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 769px) {
+  .logo {
+    margin-bottom: 0;
+  }
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo-block {
+  border: 1px solid #D8D8D8;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+  .logo-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: left;
   }
 }
 
 /*** Webinars ***/
 .webinar {
-  padding: 0 15px 35px 0;
+  padding: 0 0 35px 0;
   border-bottom: 1px solid #B2B2B2;
+}
+
+@media screen and (min-width: 650px) {
+  .webinar::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: #B2B2B2;
+    width: 300px;
+    right: 55px;
+    bottom: 0;
+  }
+}
+
+@media screen and (min-width: 650px) and (min-width: 1250px) {
+  .webinar::before {
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .webinar::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background: #B2B2B2;
+    height: 100%;
+    right: 55px;
+    top: 0;
+  }
+}
+
+@media screen and (min-width: 650px) and (min-width: 1250px) {
+  .webinar::after {
+    right: 0;
+  }
 }
 
 .webinar-top {
@@ -895,9 +907,7 @@ body {
 }
 
 .webinar-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1082,12 +1092,14 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   line-height: 16px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .footer-col {
-  margin-right: 65px;
+  margin: 0 65px 20px 0;
 }
 
 .footer-col h5 {
@@ -1120,7 +1132,7 @@ body {
 /*** Popup ***/
 .popup {
   position: absolute;
-  top: 5%;
+  top: 7%;
   background: #fff;
   border-radius: 10px;
   text-align: center;

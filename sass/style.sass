@@ -33,12 +33,14 @@ body
 
 .container 
   width: 100%
+  max-width: 950px
+  margin: 0 auto
   +mobile
     padding-right: 75px
   +tablet
-    padding-right: 105px
+    // padding-right: 105px
   +minWidth1250
-    max-width: 950px
+    padding-right: 0
     margin: 0 auto
   +container 
     padding: 0 142px
@@ -58,8 +60,7 @@ body
   padding: 14px 25px
   border-radius: 50px
   position: relative
-  +xs 
-    min-width: 120px
+  min-width: 120px
   &-white 
     border: 1px solid $primary
     color: $primary
@@ -261,7 +262,9 @@ body
     white-space: nowrap
     position: absolute
     top: 160px
-    left: 40px
+    left: 25px
+    +tablet 
+      left: 40px
     li 
       display: inline-block
       margin-right: 19px
@@ -303,29 +306,6 @@ body
   &-content
     position: relative
     margin-bottom: 25px
-    +mobile
-      &::before 
-        content: ''
-        position: absolute
-        height: 1px
-        background: #B2B2B2
-        width: 300px
-        right: 104px
-        bottom: 0
-        +minWidth1250 
-          right: 0
-      &::after
-        content: ''
-        position: absolute
-        width: 1px
-        background: #B2B2B2
-        height: 100%
-        right: 75px
-        top: 0
-        +tablet 
-          right: 104px
-        +minWidth1250 
-          right: 0
 
 .social
   position: absolute
@@ -333,9 +313,7 @@ body
   right: 0
   width: 65px
   +mobile 
-    right: 76px
-  +tablet 
-    right: 105px
+    right: 56px
   +minWidth1250
     right: 1px
   &-btn 
@@ -377,23 +355,15 @@ body
   margin: 0 auto
   position: relative
   border-radius: 10px
-  +mobile 
-    height: 400px
-    background: url(../images/promo.jpg) no-repeat
-    background-size: cover
-    background-position: 0 bottom
+  background: url(../images/promo.jpg) no-repeat
+  background-size: cover
+  background-position: right bottom
   +tablet 
     background-position: center bottom
   +desktop
-    height: 573px
     max-width: 950px
   +container 
     max-width: 100%
-  img 
-    width: 100%
-    border-radius: 10px
-    +mobile 
-      display: none
   &-block 
     position: relative
     margin-bottom: 15px
@@ -406,24 +376,35 @@ body
         position: absolute
         width: 1px
         background: #B2B2B2
-        right: 75px
+        right: 55px
         z-index: 10
-        +tablet
-          right: 104px
         +minWidth1250 
           right: 0
       &::before 
         top: -104px
-        height: 240px
+        height: 285px
         +desktop
           top: -104px
-          height: 415px
+          height: 395px
     &::after
       height: 150px
       bottom: -20px
       +desktop
         height: 150px
         bottom: -20px
+  &-content
+    padding: 70px 20px
+    +tablet 
+      padding: 120px 20px 100px
+    h1,
+    h2 
+      color: $base 
+      text-transform: uppercase
+      font-size: 24px
+      line-height: normal
+      margin-bottom: 20px
+      +tablet 
+        font-size: 32px
 
 .timer 
   background: $base
@@ -431,14 +412,6 @@ body
   padding: 10px 35px
   display: inline-block
   border-radius: 5px
-  position: absolute
-  left: 10px
-  bottom: 50px
-  +mobile 
-    left: 20px
-    bottom: 100px
-  +desktop
-    bottom: 30%
   &-title 
     margin-bottom: 10px
     line-height: 16px
@@ -446,6 +419,7 @@ body
     text-align: center
   &-row 
     display: flex
+    margin-bottom: 20px
   &-item 
     text-align: center
     span 
@@ -467,6 +441,8 @@ body
     font-size: 24px
     line-height: 28px
     font-weight: 700
+  &-btn-wrapper 
+    text-align: center
 
 .email-btn 
   display: none
@@ -482,16 +458,59 @@ body
     bottom: 150px
     z-index: 10
     cursor: pointer
-    right: 28.5px
-  +tablet 
-    right: 57.5px
+    right: 8.5px
   +minWidth1250
-    right: -47.5px 
+    right: -46.5px 
+
+/*** Logo-block ***/    
+.logo 
+  display: block
+  margin-bottom: 10px
+  +tablet 
+    margin-bottom: 0
+  img 
+    max-width: 100%
+    height: auto
+  &-block 
+    border: 1px solid #D8D8D8
+    border-radius: 10px
+    padding: 10px 15px
+    margin-bottom: 45px
+    text-align: center
+    +tablet
+      display: flex
+      justify-content: space-between
+      align-items: center
+      flex-wrap: wrap
+      text-align: left
 
 /*** Webinars ***/    
 .webinar
-  padding: 0 15px 35px 0
+  padding: 0 0 35px 0
   border-bottom: 1px solid #B2B2B2
+  +mobile
+    &::before 
+      content: ''
+      position: absolute
+      height: 1px
+      background: #B2B2B2
+      width: 300px
+      right: 55px
+      bottom: 0
+      +minWidth1250 
+        right: 0
+    &::after
+      content: ''
+      position: absolute
+      width: 1px
+      background: #B2B2B2
+      height: 100%
+      right: 55px
+      top: 0
+      +tablet 
+        // right: 75px
+      +minWidth1250 
+        right: 0
   &-top 
     display: flex
     justify-content: space-between
@@ -507,7 +526,7 @@ body
       +minWidth850
         display: block
   &-row 
-    display: flex
+    display: none
     justify-content: space-between
     flex-wrap: wrap
   &-slider 
@@ -624,10 +643,11 @@ body
 .footer 
   &-row
     display: flex
+    flex-wrap: wrap
     line-height: 16px
-    padding-bottom: 30px
+    padding-bottom: 10px
   &-col 
-    margin-right: 65px
+    margin: 0 65px 20px 0
     h5 
       font-size: 14px
       font-weight: 400
@@ -649,7 +669,7 @@ body
 /*** Popup ***/    
 .popup
   position: absolute
-  top: 5%
+  top: 7%
   background: #fff
   border-radius: 10px
   text-align: center
